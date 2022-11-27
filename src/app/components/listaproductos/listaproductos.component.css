@@ -1,0 +1,45 @@
+#pimg{
+  width: 80px;
+  height: 80px;
+}
+tr,td{
+display: flexbox;
+align-items: center;
+}
+table tr td{
+vertical-align:middle;
+}
+
+a{
+
+  padding: 10px;
+  margin: 0 auto;
+  margin:5px;
+  border-radius: 2px;
+}
+
+a:hover{
+cursor: pointer;
+text-decoration: none;
+color: white!important;
+}
+
+.editar{
+  background-color: rgb(206, 255, 232);
+  color: black;
+}
+.borrar {
+  background-color: rgb(255, 206, 206);
+  color: black;
+}
+
+.editar:hover{
+  transition: ease-in-out .3s;
+  background-color: rgb(6, 255, 139);
+  color: white;
+}
+.borrar:hover{
+  transition: ease-in-out .3s;
+  background-color: rgb(255, 81, 81);
+  color: white;
+}

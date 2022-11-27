@@ -1,0 +1,84 @@
+.nav-item-right1 {
+  display: flex;
+  position: absolute;
+  right:20px;
+  transition: ease-in-out 250ms;
+}
+.nav-item-right {
+  display: flex;
+  position: absolute;
+  right: 120px;
+}
+
+.nav-item-right1:hover{
+  cursor: pointer;
+}
+.nav-item-right0{
+  display: flex;
+  position: absolute;
+  right: 165px;
+
+
+}
+.nav-item-right0 a{
+  color: red;
+}
+.nav-item-right0 a:hover{
+  color: rgb(0, 194, 0);
+}
+
+.button {
+  display: flex;
+}
+
+.box {
+  width: 35px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  transition: all .8s;
+  cursor: pointer;
+  position: relative;
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.box:before {
+  content: "S";
+  position: absolute;
+  top: 0;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform .4s;
+}
+
+.box:nth-child(2)::before {
+  transform: translateY(-100%);
+  content: 'K';
+}
+
+.box:nth-child(3)::before {
+  content: 'A';
+}
+
+.box:nth-child(4)::before {
+  transform: translateY(-100%);
+  content: 'T';
+}
+
+.box:nth-child(5)::before {
+  content: 'E';
+}
+
+.button:hover .box:before {
+  transform: translateY(0);
+}

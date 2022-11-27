@@ -1,0 +1,255 @@
+#pimg{
+  width: 80px;
+  height: 80px;
+}
+tr,td{
+display: flexbox;
+align-items: center;
+}
+table tr td{
+vertical-align:middle;
+}
+
+a{
+
+  padding: 10px;
+  margin: 0 auto;
+  margin:5px;
+  border-radius: 2px;
+}
+
+a:hover{
+cursor: pointer;
+text-decoration: none;
+}
+
+.editar{
+  background-color: rgb(206, 255, 232);
+  color: black;
+}
+.borrar {
+  background-color: rgb(255, 206, 206);
+  color: black;
+}
+
+.editar:hover{
+  transition: ease-in-out .3s;
+  background-color: rgb(6, 255, 139);
+  color: white!important;
+}
+.borrar:hover{
+  transition: ease-in-out .3s;
+  background-color: rgb(255, 81, 81);
+  color: white!important;
+}
+
+
+
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ecf9ff;
+}
+
+body {
+  color: #272727;
+  font-family: 'Quicksand', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+}
+
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(90, 90, 90, 0.2);
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgb(116, 255, 128);
+  transition: ease-in .05s;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: rgba(243, 255, 173, 0.541);
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.card_title {
+  color: black;
+  font-size: 1.1rem;
+
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: black;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+.card_btn{
+  color: black;
+}
+
+
+#product-image{
+  height: 400px;
+  width: 400px;
+}
+
+.nav-item-right1 {
+  display: flex;
+  position: absolute;
+  right:20px;
+  transition: ease-in-out 250ms;
+}
+.nav-item-right {
+  display: flex;
+  position: absolute;
+  right: 120px;
+}
+
+.nav-item-right1:hover{
+  cursor: pointer;
+}
+.nav-item-right0{
+  display: flex;
+  position: absolute;
+  right: 165px;
+
+
+}
+.nav-item-right0 a{
+  color: red;
+}
+.nav-item-right0 a:hover{
+  color: rgb(0, 194, 0);
+}
+
+.button {
+  display: flex;
+}
+
+.box {
+  width: 35px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  transition: all .8s;
+  cursor: pointer;
+  position: relative;
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.box:before {
+  content: "S";
+  position: absolute;
+  top: 0;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform .4s;
+}
+
+.box:nth-child(2)::before {
+  transform: translateY(-100%);
+  content: 'K';
+}
+
+.box:nth-child(3)::before {
+  content: 'A';
+}
+
+.box:nth-child(4)::before {
+  transform: translateY(-100%);
+  content: 'T';
+}
+
+.box:nth-child(5)::before {
+  content: 'E';
+}
+
+.button:hover .box:before {
+  transform: translateY(0);
+}

@@ -1,0 +1,57 @@
+/** <div class="login-box">
+  <h2>Editar tus datos</h2>
+  <form>
+    <div class="user-box">
+       <input type="text" name="nombre" required [(ngModel)] = "user1.nombre" autofocus >
+      <label>Nombre</label>
+    </div>
+
+    <div class="user-box">
+       <input type="text" name="apellido" required [(ngModel)] = "user1.apellido">
+      <label>Apellido</label>
+    </div>
+
+    <div class="user-box">
+       <input type="text" name="correo" required [(ngModel)] = "user1.correo">
+      <label>Correo electronico</label>
+    </div>
+
+
+    <div class="user-box">
+       <input type="text" name="dni" required [(ngModel)] = "user1.dni">
+      <label>Dni</label>
+    </div>
+
+    <div class="user-box">
+       <input type="text" name="telefono" required [(ngModel)] = "user1.telefono">
+      <label>Teléfono</label>
+    </div>
+
+    <div class="user-box">
+       <input type="text" name="direccion" required [(ngModel)] = "user1.direccion">
+      <label>Dirección</label>
+    </div>
+
+    <div class="user-box">
+       <input type="password" name="password" required [(ngModel)] = "user1.password">
+      <label>Contraseña nueva</label>
+    </div>
+
+
+
+    <a (click)="edit()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Guardar cambios
+    </a>
+    <a [routerLink] = "['']">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Volver
+    </a>
+  </form>
+</div> **/

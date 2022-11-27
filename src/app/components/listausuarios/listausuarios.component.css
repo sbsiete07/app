@@ -1,0 +1,9 @@
+.descarga{
+  background-color:red;
+  color:white!important;
+  padding:10px;
+  margin:0 auto;
+}
+.descarga:hover{
+  cursor: pointer;
+}
