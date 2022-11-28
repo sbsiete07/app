@@ -1,60 +1,40 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/product';
 import { httpOptions } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-editar-producto',
-  templateUrl: './editar-producto.component.html',
-  styleUrls: ['./editar-producto.component.css']
+  selector: 'app-verproducto',
+  templateUrl: './verproducto.component.html',
+  styleUrls: ['./verproducto.component.css']
 })
-export class EditarProductoComponent implements OnInit {
+export class VerproductoComponent implements OnInit {
 
   constructor(private router:ActivatedRoute,private http:HttpClient,private route:Router) { }
 
   id!:number;
-  product:Product= new Product();
-  productForm:Product= new Product();
+  product:Product = new Product();
+  productForm:Product = new Product();
   mapImages = new Map();
   postResponse: any;
   uploadedImage!: File;
   dbImage: any;
   successResponse!: string;
   image: any;
-  nombreimagen!:String;
   newId!:number;
   products!:Product[];
 
-
-
   ngOnInit(): void {
+
     this.id = this.router.snapshot.params['id'];
     this.getProduct();
-  }
+    this.getProducts();
 
-  getProduct(){
-    this.http.get<Product>('http://localhost:8082/product/' + this.id,httpOptions).subscribe(data=>{
-      this.product = data;
-      this.viewImage(data.imagen_id)
-    })
-  }
-
-  editProduct(){
-    this.http.patch<Product>('http://localhost:8082/product/' + this.id,this.productForm,httpOptions).subscribe(data=>{
-      if(this.uploadedImage != null){
-        this.editImage();
-      }
-      this.route.navigate(['/listaproductos']);
-    })
-  }
-
-  editImage(){
-    this.imageUploadAction();
   }
 
   viewImage(id:number)  {
-    this.http.get('http://localhost:8082/get/img/' + id ,httpOptions )
+    this.http.get('http://localhost:8082/get/img/' + id, httpOptions )
     .subscribe(
       res => {
         this.postResponse = res;
@@ -85,6 +65,24 @@ imageUploadAction(): void {
     );
   }
 
+
+
+  getProduct(){
+    this.http.get<Product>('http://localhost:8082/product/' + this.id,httpOptions).subscribe(data=>{
+      this.product = data;
+      this.viewImage(data.imagen_id)
+    })
+  }
+
+  getProduct2(id:number){
+    this.http.get<Product>('http://localhost:8082/product/' + id,httpOptions).subscribe(data=>{
+      this.product = data;
+      this.viewImage(data.imagen_id)
+    })
+  }
+
+
+
   getLast(){
     this.newId = this.product.id - 1 ;
 
@@ -106,7 +104,6 @@ imageUploadAction(): void {
     }
   }
 
-
   getProducts(){
 
     this.http.get<Product[]>('http://localhost:8082/product/all',httpOptions)
@@ -115,15 +112,8 @@ imageUploadAction(): void {
         this.products = data;
       }
     );
+}
 
-    }
-
-    getProduct2(id:number){
-      this.http.get<Product>('http://localhost:8082/product/' + id,httpOptions).subscribe(data=>{
-        this.product = data;
-        this.viewImage(data.imagen_id)
-      })
-    }
 
 
 }

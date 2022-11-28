@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PdfmakerComponent } from './pdfmaker.component';
+import { VerproductoComponent } from './verproducto.component';
 
-describe('PdfmakerComponent', () => {
-  let component: PdfmakerComponent;
-  let fixture: ComponentFixture<PdfmakerComponent>;
+describe('VerproductoComponent', () => {
+  let component: VerproductoComponent;
+  let fixture: ComponentFixture<VerproductoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PdfmakerComponent ]
+      declarations: [ VerproductoComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PdfmakerComponent);
+    fixture = TestBed.createComponent(VerproductoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

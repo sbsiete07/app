@@ -24,7 +24,7 @@
         <a class="nav-link" [routerLink] = "['/productos']" >Productos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink] = "['/carrito']" >Carrito ({{sizeCarrito}})<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink] = "['/coleccion']" >Coleccion ({{sizeCarrito}})<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" [routerLink] = "['/login']" ><span *ngIf="error" style="color:red;"> {{error}}</span></a>
@@ -64,9 +64,9 @@
         <div class="card_image">  <img src="{{mapImages.get(product.imagen_id)}}" id="product-image" alt=""></div>
         <div class="card_content">
           <h2 class="card_title">{{product.nombre}}</h2>
-          <p class="card_text">{{product.marca}}</p>
+          <p class="card_text">{{product.marca}} - {{product.precio}} €</p>
 
-          <button class="btn card_btn" (click)="getUser(product.id)">{{product.precio}} € </button>
+          <button class="btn card_btn" (click)="getUser(product.id)">Añadir</button>
 
         </div>
       </div>

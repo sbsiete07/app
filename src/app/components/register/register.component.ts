@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       alert("Usuario creado con éxito, gracias por unirte a nosotros")
       this.router.navigate(["/login"])
     },error =>{
-      console.log("-------------->" + error);
+
     })
 
   }

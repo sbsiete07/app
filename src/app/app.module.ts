@@ -19,7 +19,8 @@ import { ListausuariosComponent } from './components/listausuarios/listausuarios
 import { ListaproductosComponent } from './components/listaproductos/listaproductos.component';
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
-import { PdfmakerComponent } from './components/pdfmaker/pdfmaker.component';
+import { VerproductoComponent } from './components/verproducto/verproducto.component';
+
 
 
 
@@ -43,7 +44,7 @@ import { PdfmakerComponent } from './components/pdfmaker/pdfmaker.component';
     ListaproductosComponent,
     EditarProductoComponent,
     CarritoComponent,
-    PdfmakerComponent
+    VerproductoComponent
   ],
   imports: [
     BrowserModule,

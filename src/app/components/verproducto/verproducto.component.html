@@ -19,9 +19,21 @@
 
 
 <div class="container">
-      <h1 class="form-title">Editar producto </h1>
+      <h1 class="form-title">Ver producto </h1>
       <form action="#">
         <div class="main-user-info">
+
+        <div class="user-input-box">
+            <label for="id">Id</label>
+            <input type="text"
+                    id="id"
+                    name="id"
+                    [(ngModel)] = "productForm.id"
+                    placeholder="{{product.id}}"
+                    disabled
+                    />
+
+          </div>
           <div class="user-input-box">
             <label for="nombre">Nombre</label>
             <input type="text"
@@ -29,6 +41,7 @@
                     name="nombre"
                     [(ngModel)] = "productForm.nombre"
                     placeholder="{{product.nombre}}"
+                    disabled
                     />
           </div>
 
@@ -39,26 +52,7 @@
                     name="marca"
                     [(ngModel)] = "productForm.marca"
                     placeholder="{{product.marca}}"
-                    />
-          </div>
-
-          <div class="user-input-box">
-            <label for="precio">Precio</label>
-            <input type="text"
-                    id="precio"
-                    name="precio"
-                    [(ngModel)] = "productForm.precio"
-                    placeholder="{{product.precio}}"
-                    />
-          </div>
-
-          <div class="user-input-box">
-            <label for="stock">Stock</label>
-            <input type="text"
-                    id="stock"
-                    name="stock"
-                    [(ngModel)] = "productForm.stock"
-                    placeholder="{{product.stock}}"
+                    disabled
                     />
           </div>
 
@@ -69,23 +63,40 @@
                     name="tipo"
                     [(ngModel)] = "productForm.tipo"
                     placeholder="{{product.tipo}}"
+                    disabled
                     />
           </div>
+
           <div class="user-input-box">
-            <label for="tipo">Imagen</label>
-            <div class="file-select" id="src-file2" >
-              <input type="file" name="src-file2" aria-label="Archivo" (change)="onImageUpload($event)">
-            </div>
+            <label for="stock">Stock</label>
+            <input type="text"
+                    id="stock"
+                    name="stock"
+                    [(ngModel)] = "productForm.stock"
+                    placeholder="{{product.stock}}"
+                    disabled
+                    />
+          </div>
+
+          <div class="user-input-box">
+            <label for="precio">Precio</label>
+            <input type="text"
+                    id="precio"
+                    name="precio"
+                    [(ngModel)] = "productForm.precio"
+                    placeholder="{{product.precio}} €"
+                    disabled
+                    />
           </div>
 
           <div class="image-product" style="padding-top:20px;witdh:100%;margin:0 auto;">
                 <img src="{{mapImages.get(product.imagen_id)}}" alt="" id="pimg" style="height:275px;widht:275px;margin-top:20px;border-radius:8px; ">
-              </div>
+          </div>
         </div>
         <div class="form-submit-btn">
-          <input type="submit" (click)="editProduct()">
+          <a (click)="getLast()" class="last">< Anterior</a>
+          <a (click)="getNext()" class="next">Siguiente ></a>
         </div>
-
       </form>
     </div>
 

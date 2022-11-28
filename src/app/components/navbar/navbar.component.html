@@ -15,8 +15,8 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink] = "['/productos']" >Productos <span class="sr-only"></span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink] = "['/carrito']" >Carrito ({{sizeCarrito}})<span id="sizeCarrito"></span> <span class="sr-only"></span></a>
+      <li class="nav-item active" *ngIf="!isLogged">
+        <a class="nav-link" [routerLink] = "['/coleccion']" >Coleccion ({{sizeCarrito}})<span id="sizeCarrito"></span> <span class="sr-only"></span></a>
       </li>
       <li class="nav-item active" *ngIf="isAdmin">
         <a class="nav-link" [routerLink] = "['/admin']" style="color:red">Admin<span class="sr-only"></span></a>

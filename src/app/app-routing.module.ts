@@ -15,6 +15,7 @@ import { ListausuariosComponent } from './components/listausuarios/listausuarios
 import { ListaproductosComponent } from './components/listaproductos/listaproductos.component';
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { VerproductoComponent } from './components/verproducto/verproducto.component';
 
 
 
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path: 'upload/product', component: UploadProductComponent, canActivate:[AdminGuard]},
   {path: 'productos', component: ProductsCrudComponent},
   {path: 'editar/producto/:id', component: EditarProductoComponent, canActivate: [AdminGuard]},
-  {path: 'carrito', component: CarritoComponent}
+  {path: 'coleccion', component: CarritoComponent, canActivate:[UserGuardGuard]},
+  {path: 'ver/producto/:id',component: VerproductoComponent}
 ];
 
 @NgModule({

@@ -17,6 +17,8 @@
 
 <app-navbar></app-navbar>
 
+
+<div class="main">
 <h1 style="text-alig:center;padding:10px;margin-bottom:40px;">Lista de usuarios</h1>
 
 
@@ -33,7 +35,7 @@
             <td>{{user.dni}}</td>
             <td>{{user.direccion}}</td>
             <td>{{user.telefono}}</td>
-            <td>{{user.rol.id}} : {{user.rol.rol}}</td>
+            <td>{{user.rol.rol}}</td>
             <td>
                 <a [routerLink] = "['/admin/editar/' + user.id]">Editar</a>
                 <a (click)="delete(user.id)">Borrar</a>
@@ -44,4 +46,4 @@
       </div>
 </div>
 
-<a (click)="pdf()" class="descarga">Descargar PDF</a>
+</div>

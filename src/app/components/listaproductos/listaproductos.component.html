@@ -17,7 +17,7 @@
 
 <app-navbar></app-navbar>
 
-
+<div class="main">
 <h1 style="text-alig:center;padding:10px;margin-bottom:40px;">Lista de productos</h1>
 
 
@@ -40,6 +40,7 @@
 
             </td>
             <td>
+            <a [routerLink] = "['/ver/producto/' + product.id]" class="ver" >Ver</a>
               <a [routerLink] = "['/editar/producto/' + product.id]" class="editar" >Editar</a>
               <a (click)="deleteProduct(product.id)" class="borrar">Eliminar</a>
             </td>
@@ -47,3 +48,4 @@
         </table>
         </div>
         </div>
+</div>
