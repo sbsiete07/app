@@ -20,6 +20,10 @@ body {
   letter-spacing: 0;
   padding: 1rem;
 }
+a:hover{
+  cursor: pointer;
+  text-decoration: none;
+}
 
 .main{
   max-width: 1200px;

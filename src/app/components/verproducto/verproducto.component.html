@@ -93,13 +93,20 @@
                 <img src="{{mapImages.get(product.imagen_id)}}" alt="" id="pimg" style="height:275px;widht:275px;margin-top:20px;border-radius:8px; ">
           </div>
         </div>
-        <div class="form-submit-btn">
-          <a (click)="getLast()" class="last">< Anterior</a>
-          <a (click)="getNext()" class="next">Siguiente ></a>
-        </div>
+
       </form>
     </div>
 
+
+
+<div class="test">
+      <div>
+        <label for="comentario">Añade un comentario</label> <button (click)="comentar()">Comentar</button>
+        <input type="text" name="comentarios" [(ngModel)]="newComent.comentarios" id="comentarios">
+      </div>
+      <p *ngFor="let com of coments">{{com.user.nombre}} <span class="block">{{com.comentarios}}</span></p>
+
+   </div>
 
 
 

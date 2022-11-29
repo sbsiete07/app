@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Coments } from 'src/app/model/coments';
 import { Product } from 'src/app/model/product';
+import { User } from 'src/app/model/user';
 import { httpOptions } from 'src/environments/environment';
 
 @Component({
@@ -14,6 +16,7 @@ export class VerproductoComponent implements OnInit {
   constructor(private router:ActivatedRoute,private http:HttpClient,private route:Router) { }
 
   id!:number;
+
   product:Product = new Product();
   productForm:Product = new Product();
   mapImages = new Map();
@@ -24,13 +27,22 @@ export class VerproductoComponent implements OnInit {
   image: any;
   newId!:number;
   products!:Product[];
+  coments!:Coments[];
+  newComent:Coments = new Coments();
+
 
   ngOnInit(): void {
-
     this.id = this.router.snapshot.params['id'];
+    this.getUser();
     this.getProduct();
-    this.getProducts();
+    this.getComents(this.product.id);
 
+  }
+
+  getUser(){
+    this.http.get<User>('http://localhost:8082/session/',httpOptions).subscribe(data=>{
+      this.newComent.user = data;
+    })
   }
 
   viewImage(id:number)  {
@@ -65,55 +77,31 @@ imageUploadAction(): void {
     );
   }
 
-
-
   getProduct(){
     this.http.get<Product>('http://localhost:8082/product/' + this.id,httpOptions).subscribe(data=>{
       this.product = data;
-      this.viewImage(data.imagen_id)
-    })
-  }
+      this.newComent.product = data;
 
-  getProduct2(id:number){
-    this.http.get<Product>('http://localhost:8082/product/' + id,httpOptions).subscribe(data=>{
-      this.product = data;
       this.viewImage(data.imagen_id)
     })
   }
 
 
+  getComents(id:number){
+      this.http.get<Coments[]>('http://localhost:8082/coments/product/'+ this.id,httpOptions).subscribe(data=>{
 
-  getLast(){
-    this.newId = this.product.id - 1 ;
+      this.coments = data;
 
-    if(this.newId < 1 ){
-      this.route.navigate(['ver/producto/1'])
-    }else{
-      this.route.navigate(['ver/producto/' + this.newId])
-      this.getProduct2(this.newId);
-    }
+    });
   }
+  comentar(){
 
-  getNext(){
-    this.newId = this.product.id + 1 ;
+    this.http.post<Coments>('http://localhost:8082/coments/',this.newComent,httpOptions).subscribe(data=>{
+      this.getComents(this.newComent.product.id);
+      this.newComent.comentarios = "";
+    })
 
-    if(this.newId > this.products.length){
-    }else{
-      this.route.navigate(['ver/producto/' + this.newId])
-      this.getProduct2(this.newId);
-    }
   }
-
-  getProducts(){
-
-    this.http.get<Product[]>('http://localhost:8082/product/all',httpOptions)
-    .subscribe(
-      data=>{
-        this.products = data;
-      }
-    );
-}
-
 
 
 }

@@ -59,9 +59,11 @@
 
   <ul class="cards">
     <li class="cards_item" *ngFor="let product of products">
-      <div class="card">
 
+      <div class="card">
+      <a [routerLink] = "['/ver/producto/' + product.id]">
         <div class="card_image">  <img src="{{mapImages.get(product.imagen_id)}}" id="product-image" alt=""></div>
+         </a>
         <div class="card_content">
           <h2 class="card_title">{{product.nombre}}</h2>
           <p class="card_text">{{product.marca}} - {{product.precio}} €</p>
