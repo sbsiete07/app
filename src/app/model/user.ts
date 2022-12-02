@@ -4,9 +4,9 @@ export class User{
   id!: number;
   nombre!:String;
   apellido!:String;
-  correo!:String;
-  password!:String;
-  dni!:String;
+  correo!:string;
+  password!:string;
+  dni!:string;
   telefono!:number;
   direccion!:String;
   rol!:Rol;

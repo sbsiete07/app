@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { identifierName } from '@angular/compiler';
+import { identifierName, ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Carrito } from 'src/app/model/carrito';
+import { Product } from 'src/app/model/product';
 import { User } from 'src/app/model/user';
 import { ServiceService } from 'src/app/service/service.service';
 import { httpOptions } from 'src/environments/environment';
@@ -28,6 +29,7 @@ export class CarritoComponent implements OnInit {
   sizeCarrito: any=0;
   postResponse: any;
   cantidadTotal:number=0;
+  product = new Product();
 
   mapImages = new Map();
 
@@ -60,9 +62,29 @@ getCart(){
   })
 }
 
+lessStock(id:number){
+
+  this.http.get<Product>('http://localhost:8082/product/' + id,httpOptions).subscribe(data=>{
+
+    this.product = data;
+
+    this.product.stock - 1;
+
+    this.http.patch<Product>('http://localhost:8082/product/'+ id,this.product,httpOptions).subscribe(data2=>{
+      console.log(data2);
+    })
+
+
+
+
+  })
+
+}
+
 addCart(id:number,sessionUser:number){
 
   this.http.post<Carrito>('http://localhost:8082/carrito/' + id, sessionUser,httpOptions).subscribe(data=>{
+    this.lessStock(id);
     this.getCart();
     this.getTotal();
     this.getTotal2();
@@ -77,8 +99,25 @@ getUser(id:number){
   })
 }
 
+addStock(id:number){
+
+  this.http.get<Product>('http://localhost:8082/product/' + id,httpOptions).subscribe(data=>{
+
+    this.product = data;
+
+    this.product.stock + 1;
+
+    this.http.patch<Product>('http://localhost:8082/product/'+ id,this.product,httpOptions).subscribe(data2=>{
+      console.log(data2);
+    })
+
+  })
+
+}
+
 deleteCart(id:number){
   this.http.delete<Carrito>('http://localhost:8082/carrito/delete/' + id,httpOptions).subscribe(data=>{
+    this.addStock(id);
     this.getCart();
     this.getTotal();
     this.getTotal2();

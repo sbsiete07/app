@@ -31,8 +31,6 @@ export class ServiceService {
     })
   }
 
-
-
   getSession(form:log){
     return this.http.post<User>(this.url + "session/",form,httpOptions);
   }

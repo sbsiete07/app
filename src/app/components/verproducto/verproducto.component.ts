@@ -29,6 +29,7 @@ export class VerproductoComponent implements OnInit {
   products!:Product[];
   coments!:Coments[];
   newComent:Coments = new Coments();
+  error!:String;
 
 
   ngOnInit(): void {
@@ -90,16 +91,23 @@ imageUploadAction(): void {
   getComents(id:number){
       this.http.get<Coments[]>('http://localhost:8082/coments/product/'+ this.id,httpOptions).subscribe(data=>{
 
-      this.coments = data;
+      this.coments = data.reverse();
 
     });
   }
   comentar(){
 
-    this.http.post<Coments>('http://localhost:8082/coments/',this.newComent,httpOptions).subscribe(data=>{
+    if(this.newComent.user != null){
+
+      this.http.post<Coments>('http://localhost:8082/coments/',this.newComent,httpOptions).subscribe(data=>{
       this.getComents(this.newComent.product.id);
       this.newComent.comentarios = "";
-    })
+      })
+
+    }else{
+    this.newComent.comentarios = "";
+    this.error = "Debe iniciar sesion para comentar"
+    }
 
   }
 

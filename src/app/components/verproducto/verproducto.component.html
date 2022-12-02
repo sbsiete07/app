@@ -100,11 +100,14 @@
 
 
 <div class="test">
-      <div>
-        <label for="comentario">Añade un comentario</label> <button (click)="comentar()">Comentar</button>
-        <input type="text" name="comentarios" [(ngModel)]="newComent.comentarios" id="comentarios">
+      <div class="comentarInput">
+        <div class="testing">
+        <label for="comentario" class="labelComent">Comentarios</label> <a (click)="comentar()" class="comentButton">Comentar</a>
+        </div>
+        <input type="text" name="comentarios" placeholder="Añade un comentario" [(ngModel)]="newComent.comentarios" id="comentarios">
+        <span style="color:red;">{{error}}</span>
       </div>
-      <p *ngFor="let com of coments">{{com.user.nombre}} <span class="block">{{com.comentarios}}</span></p>
+      <p *ngFor="let com of coments">{{com.user.correo}} <span class="block">{{com.comentarios}}</span></p>
 
    </div>
 

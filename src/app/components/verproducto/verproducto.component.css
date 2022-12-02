@@ -10,7 +10,7 @@
   border-radius: 10px;
   box-shadow: inset -2px 2px 2px rgb(255, 255, 255);
   position: absolute;
-  left: 30%;
+
   top:10%;
 
 }
@@ -391,4 +391,46 @@ p {
   background-color: rgb(124, 128, 255);
   cursor: pointer;
   transition: all .5s;
+}
+.comentarInput{
+  margin-bottom: 30px;
+}
+
+
+.comentarInput label,input{
+  width: 100%;
+  max-width: 650px;
+  padding: 10px;
+}
+
+.comentarInput a{
+  background-color: rgba(0, 140, 255, 0.568);
+  padding: 5px;
+  margin-top: 10px;
+  float: right;
+  max-height: 35px;
+  border-radius: 15px;
+  color: white;
+}
+
+.comentarInput a:hover{
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0, 140, 255, 0.836);
+  text-decoration: none;
+  transition: .5s;
+}
+
+.comentarInput label{
+  float: left;
+
+}
+
+.testing{
+  display:flex;
+}
+
+.labelComent{
+  font-weight: bold;
+  font-size: 25px;
 }
