@@ -12,3 +12,38 @@
   max-width: 1500px;
   margin: 0 auto;
 }
+
+a{
+
+  padding: 10px;
+  margin: 0 auto;
+  margin:5px;
+  border-radius: 2px;
+}
+
+a:hover{
+cursor: pointer;
+text-decoration: none;
+color: white!important;
+}
+
+.editar{
+
+  background-color: rgb(172, 205, 255);
+  color: black;
+}
+.borrar {
+  background-color: rgb(255, 206, 206);
+  color: black;
+}
+
+.editar:hover{
+  transition: ease-in-out .3s;
+  background-color: rgb(47, 130, 255);
+  color: white;
+}
+.borrar:hover{
+  transition: ease-in-out .3s;
+  background-color: rgb(255, 81, 81);
+  color: white;
+}

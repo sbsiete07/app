@@ -122,6 +122,11 @@ span {
     color: #1a1f36;
     text-align: center;
 }
+.loged{
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
 label {
     margin-bottom: 10px;
 }

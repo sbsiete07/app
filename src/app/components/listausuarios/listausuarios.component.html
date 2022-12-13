@@ -37,8 +37,8 @@
             <td>{{user.telefono}}</td>
             <td>{{user.rol.rol}}</td>
             <td>
-                <a [routerLink] = "['/admin/editar/' + user.id]">Editar</a>
-                <a (click)="delete(user.id)">Borrar</a>
+                <a [routerLink] = "['/admin/editar/' + user.id]" class="editar">Editar</a>
+                <a (click)="delete(user.id)" class="borrar">Borrar</a>
 
             </td>
         </tr>

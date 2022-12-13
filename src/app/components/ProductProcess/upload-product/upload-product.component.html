@@ -8,87 +8,71 @@
 
 
 
-
+<div class="tittle"><h1 class="form-title">Añadir porducto nuevo</h1></div>
+<form action="post" enctype="multipart/form-data">
 <div class="container">
-      <h1 class="form-title">Añadir porducto nuevo</h1>
-      <form action="post" enctype="multipart/form-data">
-        <div class="main-user-info">
-          <div class="user-input-box">
+  <div class="inputs"><label for="nombre">Nombre</label>
+    <input type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre del producto"
+            [(ngModel)] = "product.nombre"
+            required
+            /></div>
+  <div class="inputs"><label for="marca">Marca</label>
+    <input type="text"
+            id="marca"
+            name="marca"
+            placeholder="Nombre de la marca"
+            [(ngModel)] = "product.marca"
+            required
+            /></div>
+  <div class="inputs"><label for="precio">Precio</label>
+    <input type="text"
+            id="precio"
+            name="precio"
+            placeholder="Precio del producto"
+            [(ngModel)] = "product.precio"
+            required
+            /></div>
+  <div class="inputs"><label for="stock">Stock</label>
+    <input type="text"
+            id="stock"
+            name="stock"
+            placeholder="Cantidad disponible"
+            [(ngModel)] = "product.stock"
+            required
+            /></div>
+  <div class="inputs"><label for="tipo">Tipo</label>
+    <input type="text"
+            id="tipo"
+            name="tipo"
+            placeholder="Tipo de producto"
+            [(ngModel)] = "product.tipo"
+            required
+            /></div>
+<div class="inputs">
 
-            <label for="nombre">Nombre</label>
-            <input type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Nombre del producto"
-                    [(ngModel)] = "product.nombre"
-                    required
-                    />
-          </div>
-          <div class="user-input-box">
-
-            <label for="marca">Marca</label>
-            <input type="text"
-                    id="marca"
-                    name="marca"
-                    placeholder="Nombre de la marca"
-                    [(ngModel)] = "product.marca"
-                    required
-                    />
-          </div>
-          <div class="user-input-box">
-
-            <label for="precio">Precio</label>
-            <input type="text"
-                    id="precio"
-                    name="precio"
-                    placeholder="Precio del producto"
-                    [(ngModel)] = "product.precio"
-                    required
-                    />
-          </div>
-          <div class="user-input-box">
-
-            <label for="stock">Stock</label>
-            <input type="text"
-                    id="stock"
-                    name="stock"
-                    placeholder="Cantidad disponible"
-                    [(ngModel)] = "product.stock"
-                    required
-                    />
-          </div>
-          <div class="user-input-box">
-
-            <label for="tipo">Tipo</label>
-            <input type="text"
-                    id="tipo"
-                    name="tipo"
-                    placeholder="Tipo de producto"
-                    [(ngModel)] = "product.tipo"
-                    required
-                    />
-          </div>
-          <div class="user-input-box">
-
-            <label for="imagen">Imagen</label>
-
-            <div class="file-select" id="src-file2" >
-              <input type="file" name="src-file2" aria-label="Archivo" (change)="onImageUpload($event)" required>
-            </div>
-
-          </div>
-          <div style="margin:0 auto;padding:10px;color:red;" *ngIf="error">
-          {{error}}
-          </div>
+<label for="name">Imagen</label>
+<div class="file-select" id="src-file2" >
+    <input type="file" name="src-file2" aria-label="Archivo"  class="file-select" (change)="onImageUpload($event)" required>
+  </div>
 
 
-          </div>
-        <div class="form-submit-btn">
-          <input type="submit" (click)="addProduct()">
-        </div>
-      </form>
-    </div>
 
+
+
+
+</div>
+
+<div class="inputs button">
+  <input type="submit" class="boton" (click)="addProduct()">
+  <div style="margin:0 auto;padding:10px;color:red;" *ngIf="error">
+    {{error}}
+  </div>
+</div>
+</div>
+</form>
 
 
 
