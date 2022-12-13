@@ -1,115 +1,88 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<body>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <app-navbar></app-navbar>
 
 
+
+
+<div class="tittle"><h1 class="form-title">Añadir porducto nuevo</h1></div>
+<form action="post" enctype="multipart/form-data">
 <div class="container">
-      <h1 class="form-title">Ver producto </h1>
-      <form action="#">
-        <div class="main-user-info">
-
-        <div class="user-input-box">
-            <label for="id">Id</label>
-            <input type="text"
-                    id="id"
-                    name="id"
-                    [(ngModel)] = "productForm.id"
-                    placeholder="{{product.id}}"
-                    disabled
-                    />
-
-          </div>
-          <div class="user-input-box">
-            <label for="nombre">Nombre</label>
-            <input type="text"
-                    id="nombre"
-                    name="nombre"
-                    [(ngModel)] = "productForm.nombre"
-                    placeholder="{{product.nombre}}"
-                    disabled
-                    />
-          </div>
-
-          <div class="user-input-box">
-            <label for="marca">Marca</label>
-            <input type="text"
-                    id="marca"
-                    name="marca"
-                    [(ngModel)] = "productForm.marca"
-                    placeholder="{{product.marca}}"
-                    disabled
-                    />
-          </div>
-
-          <div class="user-input-box">
-            <label for="tipo">Tipo</label>
-            <input type="text"
-                    id="tipo"
-                    name="tipo"
-                    [(ngModel)] = "productForm.tipo"
-                    placeholder="{{product.tipo}}"
-                    disabled
-                    />
-          </div>
-
-          <div class="user-input-box">
-            <label for="stock">Stock</label>
-            <input type="text"
-                    id="stock"
-                    name="stock"
-                    [(ngModel)] = "productForm.stock"
-                    placeholder="{{product.stock}}"
-                    disabled
-                    />
-          </div>
-
-          <div class="user-input-box">
-            <label for="precio">Precio</label>
-            <input type="text"
-                    id="precio"
-                    name="precio"
-                    [(ngModel)] = "productForm.precio"
-                    placeholder="{{product.precio}} €"
-                    disabled
-                    />
-          </div>
-
-          <div class="image-product" style="padding-top:20px;witdh:100%;margin:0 auto;">
-                <img src="{{mapImages.get(product.imagen_id)}}" alt="" id="pimg" style="height:275px;widht:275px;margin-top:20px;border-radius:8px; ">
-          </div>
-        </div>
-
-      </form>
-    </div>
-
-
-
-<div class="test">
+<div class="inputs"><label for="id">Id</label>
+    <input type="text"
+            id="id"
+            name="id"
+            placeholder="{{product.id}}"
+            disabled
+            /></div>
+  <div class="inputs"><label for="nombre">Nombre</label>
+    <input type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="{{product.nombre}}"
+            disabled
+            /></div>
+  <div class="inputs"><label for="marca">Marca</label>
+    <input type="text"
+            id="marca"
+            name="marca"
+            placeholder="{{product.marca}}"
+            disabled
+            /></div>
+  <div class="inputs"><label for="precio">Precio</label>
+    <input type="text"
+            id="precio"
+            name="precio"
+            placeholder="{{product.precio}}"
+            disabled
+            /></div>
+  <div class="inputs"><label for="stock">Stock</label>
+    <input type="text"
+            id="stock"
+            name="stock"
+            placeholder="{{product.stock}}"
+            disabled
+            /></div>
+  <div class="inputs"><label for="tipo">Tipo</label>
+    <input type="text"
+            id="tipo"
+            name="tipo"
+            placeholder="{{product.tipo}}"
+            disabled
+            /></div>
+<div class="imagen">
+  <img src="{{mapImages.get(product.imagen_id)}}" alt="" id="pimg">
+</div>
+<div class="imagen">
       <div class="comentarInput">
         <div class="testing">
         <label for="comentario" class="labelComent">Comentarios</label> <a (click)="comentar()" class="comentButton">Comentar</a>
         </div>
-        <input type="text" name="comentarios" placeholder="Añade un comentario" [(ngModel)]="newComent.comentarios" id="comentarios">
+        <input type="text" class ="comentInput" name="comentarios" placeholder="Añade un comentario" [(ngModel)]="newComent.comentarios" id="comentarios">
         <span style="color:red;">{{error}}</span>
       </div>
       <p *ngFor="let com of coments">{{com.user.correo}} <span class="block">{{com.comentarios}}</span></p>
+      </div>
+</div>
+</form>
 
-   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

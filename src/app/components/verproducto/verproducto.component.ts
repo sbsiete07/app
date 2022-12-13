@@ -91,7 +91,7 @@ imageUploadAction(): void {
   getComents(id:number){
       this.http.get<Coments[]>('http://localhost:8082/coments/product/'+ this.id,httpOptions).subscribe(data=>{
 
-      this.coments = data.reverse();
+      this.coments = data;
 
     });
   }

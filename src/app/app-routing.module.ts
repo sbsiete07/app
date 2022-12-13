@@ -16,7 +16,6 @@ import { ListaproductosComponent } from './components/listaproductos/listaproduc
 import { EditarProductoComponent } from './components/editar-producto/editar-producto.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { VerproductoComponent } from './components/verproducto/verproducto.component';
-import { TestComponent } from './components/test/test.component';
 
 
 
@@ -33,8 +32,7 @@ const routes: Routes = [
   {path: 'productos', component: ProductsCrudComponent},
   {path: 'editar/producto/:id', component: EditarProductoComponent, canActivate: [AdminGuard]},
   {path: 'coleccion', component: CarritoComponent, canActivate:[UserGuardGuard]},
-  {path: 'ver/producto/:id',component: VerproductoComponent},
-  {path: 'test',component: TestComponent}
+  {path: 'ver/producto/:id',component: VerproductoComponent}
 ];
 
 @NgModule({

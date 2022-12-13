@@ -48,13 +48,8 @@ export class RegisterComponent implements OnInit {
         if(this.searchTelefono){
           if(this.searchPassword){
             this.service.createUser(this.user1).subscribe(data => {
-              alert("Usuario creado con éxito, gracias por unirte a nosotros")
               this.router.navigate(["/login"])
             },error=>{
-
-
-
-
 
             })
           }else{
