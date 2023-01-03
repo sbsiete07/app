@@ -21,6 +21,9 @@
       <li class="nav-item active" *ngIf="isAdmin">
         <a class="nav-link" [routerLink] = "['/admin']" style="color:red">Admin<span class="sr-only"></span></a>
       </li>
+      <li class="nav-item active" *ngIf="isAdmin">
+        <a class="nav-link" style="color:red"><input (change)="fieldsChange($event)" value="admin" type="checkbox"/><span class="sr-only">Admin</span></a>
+      </li>
       <li class="nav-item-right" *ngIf="isLogged">
         <a class="nav-link" [routerLink] = "['/login']">Iniciar sesión</a>
       </li>
@@ -34,6 +37,19 @@
         <a class="nav-link" (click)="logout()">Cerrar sesión</a>
       </li>
 
+
     </ul>
   </div>
 </nav>
+
+
+<div class="menu" id="menuadmin">
+  <h1 class="tittle">Panel de administrador</h1>
+  <ul>
+    <li class="option" [routerLink] = "['/upload/product/']"> Añadir producto </li>
+    <li class="option" [routerLink] = "['/users']"> Lista de usuarios </li>
+    <li class="option" [routerLink] = "['/listaproductos']"> Lista de productos </li>
+    <li class="option"> Ver ventas </li>
+    <li class="option"> Incidencias </li>
+  </ul>
+</div>

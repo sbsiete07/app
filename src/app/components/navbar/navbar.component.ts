@@ -48,5 +48,20 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  admin(){
+
+    
+
+  }
+
+  fieldsChange(values:any):void {
+
+    if(values.currentTarget.checked){
+      document.getElementById("menuadmin")!.style.display = "none";
+    }else{
+      document.getElementById("menuadmin")!.style.display = "";
+    }
+  }
+
 
 }

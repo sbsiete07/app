@@ -82,3 +82,37 @@
 .button:hover .box:before {
   transform: translateY(0);
 }
+
+
+
+.menu{
+  max-width: 250px;
+  position: absolute;
+  height: 100%!important;
+  background-color: lightslategrey;
+}
+
+.option{
+  text-align: center;
+  line-height: 3em;
+  width: 100%;
+  height: 3em;
+  margin: 0 auto;
+  background-color: white;
+  border: 0.5px solid lightgrey;
+}
+
+.option:hover{
+
+  -webkit-box-shadow: inset 0px 0px 30px 21px rgba(232,232,232,0.89);
+  -moz-box-shadow: inset 0px 0px 30px 21px rgba(232,232,232,0.89);
+  box-shadow: inset 0px 0px 30px 21px rgba(232,232,232,0.89);
+  cursor: pointer;
+}
+
+.tittle{
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}

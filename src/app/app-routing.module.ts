@@ -20,19 +20,24 @@ import { VerproductoComponent } from './components/verproducto/verproducto.compo
 
 
 const routes: Routes = [
+
   {path: '', component: HomeComponent},
-  {path: 'login', component: LoginComponent, canActivate:[AuthGuard]},
-  {path: 'register', component: RegisterComponent, canActivate:[AuthGuard]},
-  {path: 'perfil', component: PerfilComponent, canActivate:[UserGuardGuard]},
-  {path: 'admin', component: AdminComponent, canActivate:[AdminGuard]},
-  {path: 'users', component: ListausuariosComponent, canActivate:[AdminGuard]},
-  {path: 'listaproductos', component: ListaproductosComponent, canActivate:[AdminGuard]},
-  {path: 'admin/editar/:id', component: EditarComponent, canActivate:[AdminGuard]},
-  {path: 'upload/product', component: UploadProductComponent, canActivate:[AdminGuard]},
-  {path: 'productos', component: ProductsCrudComponent},
-  {path: 'editar/producto/:id', component: EditarProductoComponent, canActivate: [AdminGuard]},
-  {path: 'coleccion', component: CarritoComponent, canActivate:[UserGuardGuard]},
-  {path: 'ver/producto/:id',component: VerproductoComponent}
+  {path: 'ver/producto/:id',    component: VerproductoComponent},
+  {path: 'productos',           component: ProductsCrudComponent},
+
+  {path: 'login',               component: LoginComponent,            canActivate:[AuthGuard]},
+  {path: 'register',            component: RegisterComponent,         canActivate:[AuthGuard]},
+
+  {path: 'perfil',              component: PerfilComponent,           canActivate:[UserGuardGuard]},
+  {path: 'coleccion',           component: CarritoComponent,          canActivate:[UserGuardGuard]},
+
+  {path: 'admin',               component: AdminComponent,            canActivate:[AdminGuard]},
+  {path: 'users',               component: ListausuariosComponent,    canActivate:[AdminGuard]},
+  {path: 'listaproductos',      component: ListaproductosComponent,   canActivate:[AdminGuard]},
+  {path: 'admin/editar/:id',    component: EditarComponent,           canActivate:[AdminGuard]},
+  {path: 'upload/product',      component: UploadProductComponent,    canActivate:[AdminGuard]},
+  {path: 'editar/producto/:id', component: EditarProductoComponent,   canActivate: [AdminGuard]}
+  
 ];
 
 @NgModule({

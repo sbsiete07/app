@@ -21,13 +21,6 @@ import { EditarProductoComponent } from './components/editar-producto/editar-pro
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { VerproductoComponent } from './components/verproducto/verproducto.component';
 
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,4 +48,5 @@ import { VerproductoComponent } from './components/verproducto/verproducto.compo
   providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
